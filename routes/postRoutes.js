@@ -1,6 +1,7 @@
 const express = require('express');
 
 const postController = require('../controller/postController.js');
+const protect = require('../middleware/authMiddleWare.js');
 
 const router = express.Router();
 
@@ -9,12 +10,12 @@ const router = express.Router();
 router
     .route("/")
     .get(postController.getAllPosts)
-    .post(postController.createPost)
+    .post(protect, postController.createPost)
 
 router
     .route("/:id")
     .get(postController.getOnePosts)
-    .patch(postController.updatePost)
-    .delete(postController.deletePost)
+    .patch(protect, postController.updatePost)
+    .delete(protect, postController.deletePost)
 
 module.exports = router;
