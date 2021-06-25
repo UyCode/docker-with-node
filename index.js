@@ -14,7 +14,7 @@ const connectWithRetry = () => {
             .connect(mongoUrl, {
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
-                userFindAndModify: false
+                useFindAndModify: false
             })
             .then(() => {
                 isConnected = true;
