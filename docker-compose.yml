@@ -12,7 +12,7 @@ services:
     mongo:
         image: mongo
         environment:
-            - MONGO_INITDB_ROOT_USERNAME=root
+            - MONGO_INITDB_ROOT_USERNAME=admin
             - MONGO_INITDB_ROOT_PASSWORD=142857
         volumes:
             - mongo-db:/data/db
